@@ -5,6 +5,7 @@ import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Path
 
 //Se definen las rutas del servidor a las que la app llamará
 interface FisioApiService {
@@ -21,4 +22,6 @@ interface FisioApiService {
     @POST("/api/usuarios/registro")
     fun registrarPaciente(@Body request: RegistroRequest): Call<Void>
 
+    @GET("/api/ejercicios/usuario/{id}")
+    fun obtenerMisEjercicios(@Header("Authorization") token: String, @Path("id") idPaciente: Long): retrofit2.Call<List<Ejercicio>>
 }

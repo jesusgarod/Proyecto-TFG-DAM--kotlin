@@ -25,6 +25,9 @@ class MenuPrincipalActivity : AppCompatActivity() {
         // buscamos por su ID
         val tvBienvenida = findViewById<TextView>(R.id.tvBienvenida)
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
+        val tvPerfinlEdad = findViewById<TextView>(R.id.tvPerfilEdad)
+        val tvPerfilTelefono = findViewById<TextView>(R.id.tvPerfilTelefono)
+        val btnEjercicios = findViewById<Button>(R.id.btnEjercicios)
 
         val blocDeNotas = getSharedPreferences("MisPreferenciasFisioApp", MODE_PRIVATE)
         val tokenGuardado = blocDeNotas.getString("TOKEN_VIP", null)
@@ -43,6 +46,12 @@ class MenuPrincipalActivity : AppCompatActivity() {
                         if (paciente != null){
 
                             tvBienvenida.text = "¡Hola, ${paciente.nombre} ${paciente.apellidos} !"
+                            tvPerfinlEdad.text = "Edad: ${paciente.edad}"
+                            tvPerfilTelefono.text = "Teléfono: ${paciente.telefono}"
+
+                            val editor = blocDeNotas.edit()
+                            editor.putLong("ID_PACIENTE", paciente.id)
+                            editor.apply()
                         }
                     } else {
                         Toast.makeText(this@MenuPrincipalActivity, "Error de seguridad: Tu sesión ha caducado", Toast.LENGTH_SHORT).show()
@@ -72,6 +81,12 @@ class MenuPrincipalActivity : AppCompatActivity() {
             finish()
 
 
+        }
+
+        btnEjercicios.setOnClickListener {
+
+            val misEjercicios = Intent (this@MenuPrincipalActivity, EjerciciosActivity::class.java)
+            startActivity(misEjercicios)
         }
 
 
