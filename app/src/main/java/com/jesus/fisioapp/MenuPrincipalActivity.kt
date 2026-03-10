@@ -42,7 +42,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
 //                        Toast.makeText(this@MenuPrincipalActivity, "¡Bienvenido a tu clínica, ${paciente?.nombre}!", Toast.LENGTH_LONG).show()
                         if (paciente != null){
 
-                            tvBienvenida.text = "¡ yo tenhgoHola, ${paciente.nombre} ${paciente.apellidos} !"
+                            tvBienvenida.text = "¡Hola, ${paciente.nombre} ${paciente.apellidos} !"
                         }
                     } else {
                         Toast.makeText(this@MenuPrincipalActivity, "Error de seguridad: Tu sesión ha caducado", Toast.LENGTH_SHORT).show()

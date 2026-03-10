@@ -24,6 +24,7 @@ class RegistroActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.etRegistroEmail)
         val etTelefono = findViewById<EditText>(R.id.etRegistroTelefono)
         val etPassword = findViewById<EditText>(R.id.etRegistroPassword)
+        val etEdad = findViewById<EditText>(R.id.etRegistroEdad)
         val btnCrearCuenta = findViewById<Button>(R.id.btnCrearCuenta)
 
         btnCrearCuenta.setOnClickListener {
@@ -32,15 +33,18 @@ class RegistroActivity : AppCompatActivity() {
             val emailEscrito = etEmail.text.toString()
             val telefonoEscrito = etTelefono.text.toString()
             val passwordEscrita = etPassword.text.toString()
+            val edadEscrita = etEdad.text.toString()
 
-            if (nombreEscrito.isEmpty() || apellidosEscritos.isEmpty() || emailEscrito.isEmpty() || passwordEscrita.isEmpty() ||  telefonoEscrito.isEmpty()){
+            if (nombreEscrito.isEmpty() || apellidosEscritos.isEmpty() || emailEscrito.isEmpty() || passwordEscrita.isEmpty() ||  telefonoEscrito.isEmpty() || edadEscrita.isEmpty()){
 
                 Toast.makeText(this, "Por favor, rellena los campos obligatorios", Toast.LENGTH_SHORT).show()
 
             }else{
 
+                val edadInt = edadEscrita.toInt()
+
                 val nuevoPaciente = RegistroRequest(nombreEscrito, apellidosEscritos,emailEscrito,
-                    telefonoEscrito,passwordEscrita)
+                    telefonoEscrito,edadInt, passwordEscrita)
 
                 RetrofitClient.apiService.registrarPaciente(nuevoPaciente).enqueue(object : retrofit2.Callback<Void> {
 
