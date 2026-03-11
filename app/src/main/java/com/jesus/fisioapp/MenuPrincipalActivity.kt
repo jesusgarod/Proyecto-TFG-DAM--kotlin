@@ -28,6 +28,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
         val tvPerfinlEdad = findViewById<TextView>(R.id.tvPerfilEdad)
         val tvPerfilTelefono = findViewById<TextView>(R.id.tvPerfilTelefono)
         val btnEjercicios = findViewById<Button>(R.id.btnEjercicios)
+        val btnCitas = findViewById<Button>(R.id.btnCitas)
 
         val blocDeNotas = getSharedPreferences("MisPreferenciasFisioApp", MODE_PRIVATE)
         val tokenGuardado = blocDeNotas.getString("TOKEN_VIP", null)
@@ -87,6 +88,12 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
             val misEjercicios = Intent (this@MenuPrincipalActivity, EjerciciosActivity::class.java)
             startActivity(misEjercicios)
+        }
+
+        btnCitas.setOnClickListener {
+
+            val misCitas = Intent (this@MenuPrincipalActivity, MisCitasActivity::class.java)
+            startActivity(misCitas)
         }
 
 

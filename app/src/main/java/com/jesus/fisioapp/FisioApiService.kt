@@ -3,6 +3,7 @@ package com.jesus.fisioapp
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.Call
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -24,4 +25,16 @@ interface FisioApiService {
 
     @GET("/api/ejercicios/usuario/{id}")
     fun obtenerMisEjercicios(@Header("Authorization") token: String, @Path("id") idPaciente: Long): retrofit2.Call<List<Ejercicio>>
+
+    @POST("/api/citas/crear/{id}")
+    fun solicitarCita(@Header("Authorization") token: String, @Path("id") idPaciente: Long, @Body citaNueva: Cita): retrofit2.Call<Cita>
+
+
+    @GET("/api/citas/usuario/{id}")
+    fun obtenerMisCitas (@Header ("Authorization") token: String, @Path("id") idPaciente: Long) : retrofit2.Call<List<Cita>>
+
+
+    @DELETE("/api/citas/cancelar/{id}")
+    fun eliminarCita (@Header("Authorization") token: String, @Path("id") idPaciente: Long) : retrofit2.Call<Void> //void para que al borrar el server no nos de otra cita
+
 }

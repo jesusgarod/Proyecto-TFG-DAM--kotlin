@@ -15,6 +15,12 @@
         android:theme="@style/Theme.FisioApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MisCitasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SolicitarCitaActivity"
+            android:exported="false" />
+        <activity
             android:name=".EjerciciosActivity"
             android:exported="false" />
         <activity
