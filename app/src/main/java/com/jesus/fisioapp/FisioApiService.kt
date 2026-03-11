@@ -37,4 +37,6 @@ interface FisioApiService {
     @DELETE("/api/citas/cancelar/{id}")
     fun eliminarCita (@Header("Authorization") token: String, @Path("id") idPaciente: Long) : retrofit2.Call<Void> //void para que al borrar el server no nos de otra cita
 
+    @GET("/api/usuarios/todos")
+    fun obtenerTodosLosPacientes (@Header("Authorization") token: String) : retrofit2.Call<List<Paciente>>
 }

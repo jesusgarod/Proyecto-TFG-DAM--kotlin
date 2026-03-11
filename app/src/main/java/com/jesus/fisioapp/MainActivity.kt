@@ -59,21 +59,33 @@ class MainActivity : AppCompatActivity() {
                     // Si el servidor responde (sea con éxito o con error 403/404)
                     override fun onResponse(call: retrofit2.Call<LoginResponse>, response: retrofit2.Response<LoginResponse>) {
                         if (response.isSuccessful) {
-                            // ¡El semáforo está verde! (Código 200)
-                            val tokenRecibido = response.body()?.token
+
+                            val respuestaLogin = response.body()
+                            val tokenRecibido = respuestaLogin?.token
+
+                            // Extraemos el rol. Si por algún motivo falla, asumimos que es un paciente normal.
+                            val rolRecibido = respuestaLogin?.rol ?: "PACIENTE"
 
                             if (tokenRecibido != null){
-                                //SharedPreferences es un bloc de notas que tiene el movil
-                                val blocDeNotas = getSharedPreferences("MisPreferenciasFisioApp",MODE_PRIVATE)
+                                // SharedPreferences es un bloc de notas que tiene el móvil
+                                val blocDeNotas = getSharedPreferences("MisPreferenciasFisioApp", MODE_PRIVATE)
                                 val editor = blocDeNotas.edit()
 
-                                // se guarda el token
-                                editor.putString("TOKEN_VIP",tokenRecibido)
+                                // Se guarda el token
+                                editor.putString("TOKEN_VIP", tokenRecibido)
                                 editor.apply()
+                                Toast.makeText(this@MainActivity,"El rol es: $rolRecibido", Toast.LENGTH_SHORT).show()
 
-
-                                val salto = Intent(this@MainActivity, MenuPrincipalActivity::class.java)
-                                startActivity(salto)
+                                // --- EL CRUCE DE CAMINOS ---
+                                if (rolRecibido.uppercase() == "FISIO") {
+                                    // Puerta A: Es el jefe, va a su panel de control
+                                    val saltoFisio = Intent(this@MainActivity, MenuFisioActivity::class.java)
+                                    startActivity(saltoFisio)
+                                } else {
+                                    // Puerta B: Es un paciente, va al menú principal de siempre
+                                    val saltoPaciente = Intent(this@MainActivity, MenuPrincipalActivity::class.java)
+                                    startActivity(saltoPaciente)
+                                }
 
                                 finish()
 
