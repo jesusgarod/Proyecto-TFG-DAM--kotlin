@@ -28,4 +28,25 @@
         android:textSize="14sp"
         />
 
+    <TextView
+        android:id="@+id/tvSeriesRepeticionesPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 series de 15 repeticiones"
+        android:textColor="#4CAF50"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnVerVideoPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="▶ Ver Vídeo"
+        android:backgroundTint="#FF0000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        />
+
 </LinearLayout>

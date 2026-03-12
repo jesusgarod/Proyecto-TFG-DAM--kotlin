@@ -1,5 +1,6 @@
 package com.jesus.fisioapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -21,6 +22,7 @@ class DetallePacienteActivity : AppCompatActivity() {
 
         val tvNombreDetalle = findViewById<TextView>(R.id.tvNombreDetalle)
         val btnAsignarEjercicio = findViewById<Button>(R.id.btnAsignarEjercicio)
+        val btnVerEjerciciosPaciente = findViewById<Button>(R.id.btnVerEjerciciosPaciente)
 
         val idPaciente = intent.getLongExtra("ID_PACIENTE_ELEGIDO", -1L)
         val nombrePaciente = intent.getStringExtra("NOMBRE_PACIENTE_ELEGIDO") ?: "Paciente Desconocido"
@@ -35,8 +37,20 @@ class DetallePacienteActivity : AppCompatActivity() {
 
         btnAsignarEjercicio.setOnClickListener {
 
+            val irAsignarEjercicio = Intent(this@DetallePacienteActivity, AsignarEjercicioActivity::class.java)
 
+            irAsignarEjercicio.putExtra("ID_PACIENTE_DESTINO", idPaciente)
+            startActivity(irAsignarEjercicio)
         }
+
+
+        btnVerEjerciciosPaciente.setOnClickListener {
+
+            val irListaEjercicios = Intent(this@DetallePacienteActivity, ListaEjerciciosPacienteActivity::class.java)
+            irListaEjercicios.putExtra("ID_PACIENTE_DESTINO", idPaciente)
+            startActivity(irListaEjercicios)
+        }
+
 
     }
 }

@@ -33,7 +33,8 @@ class MenuFisioActivity : AppCompatActivity() {
 
         btnAgendaCitas.setOnClickListener {
 
-
+            val irAgenda = Intent(this@MenuFisioActivity, AgendaFisioActivity::class.java)
+            startActivity(irAgenda)
 
         }
 

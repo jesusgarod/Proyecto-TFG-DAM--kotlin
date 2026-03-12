@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FisioApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AgendaFisioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListaEjerciciosPacienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsignarEjercicioActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetallePacienteActivity"
             android:exported="false" />
         <activity

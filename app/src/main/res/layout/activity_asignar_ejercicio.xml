@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFFFFF"
+    tools:context=".AsignarEjercicioActivity">
+
+    <TextView
+        android:id="@+id/tvTituloFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Ejercicio"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etNombreEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ej: Rotación de hombro"
+        android:inputType="text"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloFormulario"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etDescripcionEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Escribe las instrucciones aqui"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:background="#F5F5F5"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etNombreEjercicio"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/etUrlVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enlace de youtube (opcional)"
+        android:inputType="textUri"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcionEjercicio"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etSeries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numero de series (Ej: 3)"
+        android:inputType="number"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etUrlVideo"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etRepeticiones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numero de repeticiones (Ej: 15)"
+        android:inputType="number"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etSeries"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnEnviarEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Guardar y Asignar"
+        android:backgroundTint="#4CAF50"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/etRepeticiones"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
