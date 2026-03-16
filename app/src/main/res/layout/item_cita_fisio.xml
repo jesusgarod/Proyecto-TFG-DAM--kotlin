@@ -1,80 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
     android:layout_margin="8dp"
-    android:background="#FFF3E0"
-    android:elevation="2dp">
 
-    <TextView
-        android:id="@+id/tvIconoAgenda"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="📅"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/terciario_item2"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/tvFechaHoraFisio"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="15/10/2026 - 10:30"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#E65100"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="@id/tvIconoAgenda"
-        app:layout_constraintStart_toEndOf="@id/tvIconoAgenda"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvNombrePacienteAgenda"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="👤 Nombre del Paciente"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/tvFechaHoraFisio"
-        app:layout_constraintStart_toStartOf="@id/tvFechaHoraFisio"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <TextView
+            android:id="@+id/tvIconoAgenda"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="📅"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMotivoFisio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Motivo: Dolor de espalda"
-        android:textSize="14sp"
-        android:textColor="#424242"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/tvNombrePacienteAgenda"
-        app:layout_constraintStart_toStartOf="@id/tvFechaHoraFisio"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <TextView
+            android:id="@+id/tvFechaHoraFisio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="15/10/2026 - 10:30"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#C7170A"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/tvIconoAgenda"
+            app:layout_constraintStart_toEndOf="@id/tvIconoAgenda"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tvEstadoCitaFisio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pendiente"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="#BBDEFB"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <TextView
+            android:id="@+id/tvNombrePacienteAgenda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="👤 Nombre del Paciente"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvFechaHoraFisio"
+            app:layout_constraintStart_toStartOf="@id/tvFechaHoraFisio"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvMotivoFisio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Motivo: Dolor de espalda"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNombrePacienteAgenda"
+            app:layout_constraintStart_toStartOf="@id/tvFechaHoraFisio"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEstadoCitaFisio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendiente"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/primario"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

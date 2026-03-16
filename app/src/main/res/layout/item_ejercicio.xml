@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:layout_margin="8dp"
-    android:background="#F5F5F5"
-    android:elevation="2dp"
-    >
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/terciario_item2"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/tvTituloEjercicio"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo del ejercicio"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvDescripcionEjercicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Aqui irá la explicación de los ejercicios"
-        android:textSize="14sp"
-        />
+        <TextView
+            android:id="@+id/tvTituloEjercicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo del ejercicio"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
-    <TextView
-        android:id="@+id/tvSeriesRepeticionesPaciente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="3 series de 15 repeticiones"
-        android:textColor="#4CAF50"
-        android:textStyle="bold"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp" />
+        <TextView
+            android:id="@+id/tvDescripcionEjercicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Aqui irá la explicación de los ejercicios"
+            android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/btnVerVideoPaciente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="▶ Ver Vídeo"
-        android:backgroundTint="#FF0000"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        />
+        <TextView
+            android:id="@+id/tvSeriesRepeticionesPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x series de x repeticiones"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp" />
 
-</LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerVideoPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▶ Ver Vídeo"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
+            app:backgroundTint="#FF0000"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

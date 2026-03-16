@@ -76,13 +76,13 @@ class MainActivity : AppCompatActivity() {
                                 editor.apply()
                                 Toast.makeText(this@MainActivity,"El rol es: $rolRecibido", Toast.LENGTH_SHORT).show()
 
-                                // --- EL CRUCE DE CAMINOS ---
+                                // comprueba si es fisio o paciente
                                 if (rolRecibido.uppercase() == "FISIO") {
-                                    // Puerta A: Es el jefe, va a su panel de control
+                                    // panel control fisio
                                     val saltoFisio = Intent(this@MainActivity, MenuFisioActivity::class.java)
                                     startActivity(saltoFisio)
                                 } else {
-                                    // Puerta B: Es un paciente, va al menú principal de siempre
+                                    // panel de control paciente
                                     val saltoPaciente = Intent(this@MainActivity, MenuPrincipalActivity::class.java)
                                     startActivity(saltoPaciente)
                                 }

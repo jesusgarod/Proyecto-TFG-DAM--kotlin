@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.FisioApp" parent="Base.Theme.FisioApp" />
+
+    <style name="BotonCalendario" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">20dp</item>
+
+    </style>
+
 </resources>

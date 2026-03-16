@@ -47,17 +47,17 @@ class CitaFisioAdapter (private val listaCitas: List<Cita>, private val alPulsar
             "Aceptada" -> {
 
                 holder.tvEstado.setTextColor(Color.parseColor("#1B5E20"))
-                holder.tvEstado.setBackgroundColor(Color.parseColor("#C8E6C9"))
+//                holder.tvEstado.setBackgroundColor(Color.parseColor("#C8E6C9"))
             }
             "Cancelada" -> {
 
                 holder.tvEstado.setTextColor(Color.parseColor("#B71C1C"))
-                holder.tvEstado.setBackgroundColor(Color.parseColor("#FFCDD2"))
+//                holder.tvEstado.setBackgroundColor(Color.parseColor("#FFCDD2"))
             }
             else -> {
 
                 holder.tvEstado.setTextColor(Color.parseColor("#1976D2"))
-                holder.tvEstado.setBackgroundColor(Color.parseColor("#BBDEFB"))
+//                holder.tvEstado.setBackgroundColor(Color.parseColor("#BBDEFB"))
 
             }
         }

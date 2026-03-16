@@ -43,7 +43,9 @@ interface FisioApiService {
     fun obtenerTodosLosPacientes (@Header("Authorization") token: String) : retrofit2.Call<List<Paciente>>
 
     @POST("/api/ejercicios/asignar/{id}")
-    fun asignarEjercicio (@Header ("Authorization") token: String, @Path("id") idPaciente: Long, @Body ejercicio: EjercicioRequest) : retrofit2.Call<Ejercicio> //devuelve el ejercicio ya guardado
+    fun asignarEjercicio (@Header ("Authorization") token: String,
+                          @Path("id") idPaciente: Long,
+                          @Body ejercicio: EjercicioRequest) : retrofit2.Call<Ejercicio> //devuelve el ejercicio ya guardado
 
     @DELETE("/api/ejercicios/{id}")
     fun eliminarEjercicio (@Header ("Authorization") token: String, @Path("id") idEjercicio: Long): retrofit2.Call<Void>

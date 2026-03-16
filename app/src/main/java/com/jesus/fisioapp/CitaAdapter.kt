@@ -44,17 +44,17 @@ class CitaAdapter(private val listaCitas: List<Cita>, private val pulsadorBorrar
             "Aceptada" -> {
                 // Letra verde oscuro, fondo verde clarito
                 holder.tvEstado.setTextColor(android.graphics.Color.parseColor("#1B5E20"))
-                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#C8E6C9"))
+//                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#C8E6C9"))
             }
             "Cancelada" -> {
                 // Letra roja oscura, fondo rojo clarito
                 holder.tvEstado.setTextColor(android.graphics.Color.parseColor("#B71C1C"))
-                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#FFCDD2"))
+//                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#FFCDD2"))
             }
             else -> {
                 // "Pendiente" (o cualquier otro error): Letra azul oscura, fondo azul clarito
                 holder.tvEstado.setTextColor(android.graphics.Color.parseColor("#1976D2"))
-                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#BBDEFB"))
+//                holder.tvEstado.setBackgroundColor(android.graphics.Color.parseColor("#BBDEFB"))
             }
         }
         holder.tvBorrar.setOnClickListener {
